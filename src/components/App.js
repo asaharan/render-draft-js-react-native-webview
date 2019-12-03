@@ -13,7 +13,6 @@ const createEditorState = rawContent => {
       try {
         parsedRawContent = JSON.parse(rawContent);
       } catch (e) {
-        console.error(e);
         parsedRawContent = {};
       }
     }
@@ -55,8 +54,8 @@ const App = () => {
     };
   }, [onFetchedEditorContent]);
   useEffect(() => {
-    console.log("editorState has changed", editorState);
-    // set editor state here
+    const event = new Event("on-editor-render");
+    window.dispatchEvent(event);
   }, [editorState]);
   return (
     <div>

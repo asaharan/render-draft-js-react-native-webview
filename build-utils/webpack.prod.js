@@ -1,5 +1,7 @@
 const commonPaths = require("./common-paths");
 
+const HTMLInlineCSSWebpackPlugin = require("html-inline-css-webpack-plugin")
+  .default;
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -25,10 +27,9 @@ const config = {
           {
             loader: "css-loader",
             options: {
-              modules: true,
               importLoaders: 1,
               localsConvention: "camelCase",
-              sourceMap: true
+              sourceMap: false
             }
           },
           {
@@ -36,10 +37,7 @@ const config = {
           }
         ]
       },
-      {
-        test: /\.(jpe?g|png|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
-        use: "base64-inline-loader"
-      }
+      { test: /\.(woff2?|ttf)$/i, use: [{ loader: "file-loader" }] }
     ]
   },
   plugins: [
@@ -50,7 +48,8 @@ const config = {
       template: "public/index.html",
       inlineSource: ".(js|css)$" // embed all javascript and css inline
     }),
-    new HtmlWebpackInlineSourcePlugin()
+    new HtmlWebpackInlineSourcePlugin(),
+    new HTMLInlineCSSWebpackPlugin()
   ]
 };
 
