@@ -13,6 +13,7 @@
     "build:bundleanalyzer": "yarn build -- --env.addons=bundleanalyzer"
   },
   "dependencies": {
+    "draft-js": "^0.11.3",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-delay-render": "^0.1.2",
