@@ -5,9 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-  </link>
-  <title>react-starter-boilerplate-hmr</title>
+  <title>Editor</title>
+    <script>
+        setTimeout(()=>{
+                var event = new CustomEvent('fetched-editor-content',{detail:{ed:1}})
+                window.dispatchEvent(event)
+        },1000)
+    </script>
 </head>
 
 <body>
