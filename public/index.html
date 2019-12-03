@@ -8,9 +8,12 @@
   <title>Editor</title>
     <script>
         setTimeout(()=>{
-                var event = new CustomEvent('fetched-editor-content',{detail:{ed:1}})
+                const rawContent = "{\"blocks\":[{\"key\":\"56c44\",\"text\":\" The average of ‘n’ numbers is z. If the number x is replaced by the number \",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"94c0p\",\"text\":\" \",\"type\":\"atomic\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[{\"offset\":0,\"length\":1,\"key\":0}],\"data\":{}},{\"key\":\"44jku\",\"text\":\" , then the average becomes \",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"9sphv\",\"text\":\" \",\"type\":\"atomic\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[{\"offset\":0,\"length\":1,\"key\":1}],\"data\":{}},{\"key\":\"4o00c\",\"text\":\" . Find the relation between \",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"418gq\",\"text\":\" \",\"type\":\"atomic\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[{\"offset\":0,\"length\":1,\"key\":2}],\"data\":{}},{\"key\":\"1l8f0\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{\"0\":{\"type\":\"TOKEN\",\"mutability\":\"IMMUTABLE\",\"data\":{\"content\":\"x1\"}},\"1\":{\"type\":\"TOKEN\",\"mutability\":\"IMMUTABLE\",\"data\":{\"content\":\"z1\"}},\"2\":{\"type\":\"TOKEN\",\"mutability\":\"IMMUTABLE\",\"data\":{\"content\":\"n, z, z1 , x \\\\space and \\\\space x1.\"}}}}"
+                window.rawContent = rawContent
+            var event = new CustomEvent('fetched-editor-content',{detail:{rawContent}})
                 window.dispatchEvent(event)
-        },1000)
+            console.log('dispatched event')
+        },2000)
     </script>
 </head>
 
