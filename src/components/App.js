@@ -26,7 +26,7 @@ const createEditorState = rawContent => {
       return !(b.type === "unstyled" && !b.text);
     });
     editorState = EditorState.createWithContent(
-      convertFromRaw(parsedRawContent)
+      convertFromRaw(sanitizedRawContent)
     );
   }
   return editorState;
